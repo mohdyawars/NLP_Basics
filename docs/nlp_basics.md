@@ -59,9 +59,41 @@ Lemmatization is a "smart" way to find the root form of a word. Unlike stemming,
 
 ---
 
-### Quick Comparison Table
-
-| Tool | Approach | Result | Speed |
-| :--- | :--- | :--- | :--- |
-| **Stemming** | Chopping rules | "studi" | 🚀 Blazing Fast |
 | **Lemmatization** | Dictionary lookup | "study" | 🐢 Slower |
+
+---
+
+## 4. Part-of-Speech (POS) Tagging
+**What is it?**  
+POS tagging is the process of labeling each word in a sentence with its grammatical role, like **Noun**, **Verb**, or **Adjective**. It helps the computer understand how words relate to each other.
+
+**Why is it useful?**
+- It's essential for **Lemmatization** (to know if a word is a noun or a verb).
+- It helps in understanding the context (e.g., "book" can be a noun or a verb).
+
+**Common POS Tags (NLTK):**
+- **Noun Tags:**
+    - **NN**: Noun, singular (e.g., "dog")
+    - **NNS**: Noun, plural (e.g., "dogs")
+    - **NNP**: Proper noun, singular (e.g., "India", "John")
+    - **NNPS**: Proper noun, plural (e.g., "Americans")
+- **Verb Tags:**
+    - **VB**: Verb, base form (e.g., "eat")
+    - **VBD**: Verb, past tense (e.g., "ate")
+    - **VBG**: Verb, gerund or present participle (e.g., "eating")
+    - **VBN**: Verb, past participle (e.g., "eaten")
+    - **VBP**: Verb, present-tense, non-3rd person (e.g., "eat")
+    - **VBZ**: Verb, present-tense, 3rd person (e.g., "eats")
+- **Adjective & Adverb Tags:**
+    - **JJ**: Adjective (e.g., "big")
+    - **JJR**: Adjective, comparative (e.g., "bigger")
+    - **JJS**: Adjective, superlative (e.g., "biggest")
+    - **RB**: Adverb (e.g., "quickly")
+- **Others:**
+    - **PRP**: Pronoun (e.g., "I", "you")
+    - **DT**: Determiner (e.g., "the", "a")
+    - **IN**: Preposition or subordinating conjunction (e.g., "in", "of")
+    - **CD**: Cardinal number (e.g., "one", "3000")
+
+**The Rule:** In NLTK, you must **tokenize** your text into a list of words before applying `pos_tag()`.
+
